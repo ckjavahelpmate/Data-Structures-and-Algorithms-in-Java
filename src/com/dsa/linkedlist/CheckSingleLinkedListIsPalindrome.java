@@ -62,7 +62,7 @@ public class CheckSingleLinkedListIsPalindrome {
 	{
 		Node<E> hare = head ;
 		Node<E> turtle = head ;
-		
+//		stop when hare reaches end then turtle location will be middle 
 		while( hare.next != null  && hare.next.next != null )
 		{
 //			Move turtle 1 step forward
