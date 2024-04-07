@@ -61,17 +61,7 @@ class LL<E> {
 	}
 
 	public boolean contains(E data) {
-		if (head == null) {
-			return false;
-		}
-		for (Node<E> newNode = head; newNode != null; newNode = newNode.next) {
-			if (newNode.data != null && newNode.data.equals(data)) {
-				return true;
-			} else if (data == null && newNode.data == data) {
-				return true;
-			}
-		}
-		return false;
+		return indexOf(data) >= 0 ;
 	}
 
 	public boolean remove(E data) {
@@ -100,6 +90,22 @@ class LL<E> {
 		}
 		return false;
 	}
+	public int indexOf(E data) {
+		if (head == null) {
+			return -1;
+		}
+		int index = 0 ;
+		for (Node<E> newNode = head; newNode != null; newNode = newNode.next) {
+			if (newNode.data != null && newNode.data.equals(data)) {
+				return index;
+			} else if (data == null && newNode.data == data) {
+				return index;
+			}
+			index++ ;
+		}
+		return -1;
+	}
+	
 }
 
 public class TestLL {
@@ -114,8 +120,8 @@ public class TestLL {
 		ll.addLast(null);
 
 		System.out.println(ll);
-		ll.remove(10);
-		System.out.println(ll);
+		
+		System.out.println(ll.indexOf(null));
 
 		LinkedList<Integer> l = new LinkedList<Integer>();
 		l.contains(10);
