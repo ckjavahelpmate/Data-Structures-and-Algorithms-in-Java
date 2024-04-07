@@ -120,7 +120,7 @@ class LL<E> {
 		}
 	}
 
-	private static class Node<E> {
+	 static class Node<E> {
 		E data;
 		Node<E> next;
 
@@ -163,6 +163,7 @@ public class TestLL {
 
 		LinkedList<Integer> l = new LinkedList<Integer>();
 		l.contains(10);
+		l.iterator();
 	}
 
 }
